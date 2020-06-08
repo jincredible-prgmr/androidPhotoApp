@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="?attr/actionBarSize"
+    android:padding="10dp">
+
+
+    <ImageView
+        android:id="@+id/photoDisplay"
+        android:layout_width="match_parent"
+        android:layout_height="136dp"
+        android:layout_centerHorizontal="false"
+        android:layout_centerVertical="true" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
+
+        <Button
+            android:id="@+id/back_arrow"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginEnd="15dp"
+            android:background="@color/design_default_color_secondary"
+            android:onClick="moveLeft"
+            android:text="&lt;-"
+            android:textColor="@color/movieFore"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/front_arrow"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:background="@color/design_default_color_secondary"
+            android:onClick="moveRight"
+            android:text="->"
+            android:textColor="@color/movieFore"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
+
+        <!--  Name label -->
+
+        <TextView
+            android:id="@+id/nameview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="2dp"
+            android:text="Name:"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="254dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <!-- Name field -->
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingTop="10dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/checked_person"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onCheckboxClicked"
+                    android:text="Person" />
+
+                <CheckBox
+                    android:id="@+id/checked_place"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onCheckboxClicked"
+                    android:text="Place" />
+                <EditText
+                    android:id="@+id/add_tag_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:drawable/editbox_background" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="20dp">
+
+                    <Button
+                        android:id="@+id/add_tag"
+                        style="?android:attr/buttonBarButtonStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="15dp"
+                        android:background="@color/design_default_color_secondary"
+                        android:onClick="addTag"
+                        android:text="Add Tag"
+                        android:textColor="@color/movieFore"
+                        android:textSize="12sp" />
+
+                    <Button
+                        android:id="@+id/delete_tag"
+                        style="?android:attr/buttonBarButtonStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:background="@color/movieBack"
+                        android:onClick="deleteTag"
+                        android:text="Del Tag"
+                        android:textColor="@color/movieFore"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/del_tag"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="@color/design_default_color_secondary"
+                    android:onClick="delete"
+                    android:text="DEL TAG"
+                    android:textColor="@color/movieFore"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/tags_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@color/movieFore"
+                android:dividerHeight="1px"/>
+
+        </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingTop="20dp">
+
+        <Button
+            android:id="@+id/delete_photo"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:background="@color/design_default_color_secondary"
+            android:onClick="deletePhoto"
+            android:text="Delete Photo"
+            android:textColor="@color/movieFore"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/moveToAlbum"
+            android:layout_width="243dp"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/editbox_background"
+            android:hint="name of destination" />
+
+        <Button
+            android:id="@+id/moveTo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/design_default_color_secondary"
+            android:onClick="move"
+            android:text="Move Photo" />
+    </LinearLayout>
+
+
+</LinearLayout>
